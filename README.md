@@ -49,5 +49,5 @@
 # How to refactor
 
 * #### The code should become cleaner.
-* New functionality shouldn’t be created during refactoring.
-* All existing tests must pass after refactoring.
+* #### New functionality shouldn’t be created during refactoring.
+* #### All existing tests must pass after refactoring.
