@@ -16,7 +16,7 @@
 
 ### Causes of technical debt:
 
-* **Bsiness pressure: ** Features released before completion for some reason.
+* **Bsiness pressure:** Features released before completion for some reason.
 * **Lack of understanding of the consequences of technical debt.**
 * **Failing to combat the strict coherence of components:** Any change in some a part of the project affects the other part of the project
 * **Lack of tests:** This means more bugs and other problems
