@@ -122,3 +122,33 @@ Sometimes merging classes is impossible or so difficult as to be pointless.
 #### Examp in project: create Objects, and (rename , put) common methods form Contact.
 
 <br/><hr/>
+
+## Change Preventers
+
+**if you need to change something in one place in your code, you have to make many changes in other places too.**
+
+### Divergent Change
+
+**Signs and Symptoms: when a single class is frequently modified for different reasons, such as adding new features or accommodating changes in requirements.**
+
+#### Treatment:
+
+* Split up the behavior of the class via Extract Class.
+* Extract Superclass and Extract Subclass.
+
+### Shotgun Surgery
+
+**Signs and Symptoms: Making any modifications requires that you make many small changes to many different classes. Reasons (A single responsibility has been split up among a large number of classes)**
+
+#### Treatment:
+
+* Use Move Method and Move Field to move existing class behaviors into a single class.
+* Inline Class
+
+### Parallel Inheritance Hierarchies
+
+**Signs and Symptoms: Whenever you create a subclass for a class, you find yourself needing to create a subclass for another class.**
+
+#### Treatment:
+
+* You may de-duplicate parallel class hierarchies in two steps. First, make instances of one hierarchy refer to instances of another hierarchy. Then, remove the hierarchy in the referred class, by using Move Method and Move Field.
