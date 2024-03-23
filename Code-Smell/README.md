@@ -152,3 +152,70 @@ Sometimes merging classes is impossible or so difficult as to be pointless.
 #### Treatment:
 
 * You may de-duplicate parallel class hierarchies in two steps. First, make instances of one hierarchy refer to instances of another hierarchy. Then, remove the hierarchy in the referred class, by using Move Method and Move Field.
+
+<br/><hr/>
+
+## Dispensables (code not needed)
+
+**A dispensable is something pointless and unneeded whose absence would make the code cleaner, more efficient and easier to understand.**
+
+### Duplicate Code
+
+**Two code fragments look almost identical.**
+
+### Comments
+
+**A method is filled with explanatory comments.**
+
+#### When to Ignore
+
+* When explaining **why** something is being implemented in a particular way.
+* When explaining complex algorithms (when all other methods for simplifying the algorithm have been tried and come up short).
+* Use comments when behavior is unexpected and cont improve code
+
+### Lazy Class
+
+A rarely used class that can be removed
+
+### Data Class
+
+a class is solely dedicated to holding data without any associated behavior.
+
+### Dead Code
+
+sections of code that are no longer used or executed, serving no purpose in the program.
+
+### Speculative Generality
+
+There’s an unused class, method, field or parameter.
+
+<br/><hr/>
+
+## couplers
+
+**classes or modules that excessively rely on each other, leading to high coupling and decreased modularity in the codebase.**
+
+
+### Feature Envy
+
+A method accesses the data of another object more than its own data.
+
+**Treatment**: Move the methods and data that are overly dependent on another class into the class where they naturally belong. This improves encapsulation and reduces coupling.
+
+### Inappropriate Intimacy 
+
+**two classes are overly intertwined, accessing each other's internal details excessively, which can lead to high coupling and decreased maintainability.**
+
+**Treatment**: encapsulating their interactions more effectively. Consider using design patterns like Dependency Injection and breaking down large classes into smaller, focused ones.
+
+### Message Chains
+
+**client code navigates through a series of method calls on different objects to access functionality, which can indicate a lack of encapsulation and lead to fragile code.**
+
+**Treatment**: reduce the chain of method calls by introducing intermediary methods or objects that encapsulate the required functionality.
+
+### Middle Man
+
+**a class acts primarily as a mediator between other classes, delegating most of its functionality to them without adding significant value, leading to unnecessary complexity.**
+
+**Treatment**: Eliminate the middle man by directly invoking methods of target classes and add functionality in middle man to target classes.
