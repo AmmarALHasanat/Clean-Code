@@ -1,8 +1,6 @@
 # Code smell
 
 **the traces in the code that indicates a deeper problem in the application or codebase.**
-<br/><hr/>
-
 
 ## Bloaters
 
@@ -68,4 +66,59 @@ Signs and Symptoms: A method contains too many lines of code.
 
 <br/><hr/>
 
-## test
+## Object-Orientation Abusers
+
+**All these smells are incomplete or incorrect application of object-oriented programming principles.**
+
+### Switch Statements
+
+**Signs and Symptoms:You have a complex `switch` operator or sequence of `if` statements.**
+
+#### Treatment:
+
+* Extract Method and then Move Method.Replace Parameter with Method Call
+* Introduce Parameter Object
+* Preserve Whole ObjectTemporary Field
+
+#### When to Ignore:
+
+* When a `switch` operator performs simple actions, there’s no reason to make code changes.
+* Often `switch` operators are used by factory design patterns.
+* Replace Type Code with Class, Replace Type Code with Subclasses or Replace Type Code with State/Strategy.
+* Replace Conditional with Polymorphism.
+
+### Temporary Field
+
+**Signs and Symptoms: Temporary fields get their values (and thus are needed by objects) only under certain circumstances. Outside of these circumstances, they’re empty.**
+
+#### Treatment:
+
+* Extract Class and Replace Method with Method Object.
+* Introduce Null Object
+
+### Refused Bequest
+
+**Signs and Symptoms: If a subclass uses only some of the methods and properties inherited from its parents, the hierarchy is off-kilter."superclass and subclass are completely different"**
+
+#### Treatment:
+
+* Replace Inheritance with Delegation.
+* If inheritance is appropriate remove inappropriate methods from subclass, add common methods to superclass , and Extract Superclass
+
+### Alternative Classes with Different Interfaces
+
+**Signs and Symptoms: Two classes perform identical functions but have different method names.**
+
+#### Treatment:
+
+* Rename Methods to make them identical in all alternative classes.
+* Move Method, Add Parameter and Parameterize Method to make the signature and implementation of methods the same.
+* Preserve Whole ObjectTemporary Field
+
+#### When to Ignore:
+
+Sometimes merging classes is impossible or so difficult as to be pointless.
+
+#### Examp in project: create Objects, and (rename , put) common methods form Contact.
+
+<br/><hr/>
