@@ -1,6 +1,8 @@
 # Code smell
 
 **the traces in the code that indicates a deeper problem in the application or codebase.**
+<br/><hr/>
+
 
 ## Bloaters
 
@@ -64,6 +66,6 @@ Signs and Symptoms: A method contains too many lines of code.
 
 #### Examp in project: Objects like contacts or deals.
 
-<br/>
+<br/><hr/>
 
 ## test
